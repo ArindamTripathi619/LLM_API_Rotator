@@ -1,0 +1,14 @@
+[Unit]
+Description=LLM API Rotator Service
+After=network.target
+
+[Service]
+User=DevCrewX
+WorkingDirectory=/home/DevCrewX/Projects/LLM_API_Rotator
+# Update the path to your litellm binary (usually in your venv)
+ExecStart=/home/DevCrewX/Projects/LLM_API_Rotator/venv/bin/litellm --config /home/DevCrewX/Projects/LLM_API_Rotator/config.yaml --port 8000 --host 0.0.0.0
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,37 @@
+model_list:
+  # Groq Llama 3.3 Example (8 keys)
+  - model_name: groq-llama
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: gsk_example_key_1
+  - model_name: groq-llama
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: gsk_example_key_2
+  # ... add more keys here
+
+  # Gemini 2.0 Flash Example (5 keys)
+  - model_name: gemini-flash
+    litellm_params:
+      model: gemini/gemini-2.0-flash
+      api_key: AIzaSy_example_key_1
+  - model_name: gemini-flash
+    litellm_params:
+      model: gemini/gemini-2.0-flash
+      api_key: AIzaSy_example_key_2
+
+  # Gemini Image Generation Example (Imagen 3)
+  - model_name: gemini-image
+    litellm_params:
+      model: gemini/nano-banana-pro-preview
+      api_key: AIzaSy_example_key_1
+
+litellm_settings:
+  drop_params: true
+  num_retries: 5
+  set_fastapi_logging: false
+
+router_settings:
+  routing_strategy: simple-shuffle
+  allowed_fails: 1
+  cooldown_time: 60

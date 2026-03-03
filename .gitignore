@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+venv/
+ENV/
+env/
+.env
+
+# Project specific
+.agent/
+brain/
+.tmp/
+execution/
+directives/
+
+# Secrets & Local Configs
+config.yaml
+*.log
+key_manager.py
+main.py
+gen_config.py
+check_gemini_image.py
+test_banana.py
+test_all_gemini_image.py
+test_imagen_refined.py
