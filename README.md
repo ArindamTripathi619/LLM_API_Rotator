@@ -19,7 +19,7 @@ The setup uses [LiteLLM](https://github.com/BerriAI/litellm) as a proxy and rout
 ## 🚀 Quick Setup
 
 ### 1. Prerequisites
-- Linux (optimized for Ryzen 7 environments).
+- Linux (optimized for Ryzen 7 environments).D84B-FDF8
 - Python 3.10+
 - `pip install litellm[proxy] python-dotenv PyYAML`
 
@@ -44,11 +44,17 @@ To make the rotator run automatically in the background:
 
 ## 📊 Available Virtual Models
 
-| Virtual Model | Underlying Engine | Capability |
-| :--- | :--- | :--- |
-| `groq-llama` | Groq Llama 3.3 70B | Lightning-fast Chat & Coding |
-| `gemini-flash` | Gemini 2.0 Flash | Vision & Long Context |
-| `gemini-image` | Imagen 3 / Nano Banana | Image Generation |
+| Virtual Model | Underlying Engine | Speed | Capability |
+| :--- | :--- | :--- | :--- |
+| `groq-llama` | Groq Llama 3.3 70B | 280 tps | Lightning-fast Chat & Coding |
+| `groq-llama-small` | Groq Llama 3.1 8B | 560 tps | Ultra-fast lightweight tasks |
+| `groq-scout` | Llama 4 Scout 17B | 750 tps | Fast multimodal (vision + text) |
+| `groq-gpt-oss` | OpenAI GPT-OSS 120B | 500 tps | Best reasoning, flagship open model |
+| `groq-gpt-oss-mini` | OpenAI GPT-OSS 20B | 1000 tps | Fastest, good quality |
+| `groq-qwen` | Qwen3 32B | 400 tps | Strong multilingual & reasoning |
+| `groq-kimi` | Kimi K2 0905 | 200 tps | 262K context, agentic coding |
+| `gemini-flash` | Gemini 2.0 Flash | — | Vision & Long Context |
+| `gemini-image` | Imagen 3 / Nano Banana | — | Image Generation |
 
 ## 🔗 Integration Examples
 
