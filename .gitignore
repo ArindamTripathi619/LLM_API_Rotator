@@ -26,3 +26,6 @@ check_gemini_image.py
 test_banana.py
 test_all_gemini_image.py
 test_imagen_refined.py
+
+#Backups
+*.bak

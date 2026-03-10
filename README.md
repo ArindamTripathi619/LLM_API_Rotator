@@ -1,14 +1,16 @@
 # LLM API Rotator 🚀
 
-A robust, local LLM API gateway that rotates through multiple free-tier API keys (Groq & Gemini) to bypass rate limits. It provides a single OpenAI-compatible endpoint that you can use with tools like **Open WebUI**, **AnythingLLM**, **ONLYOFFICE**, and custom scripts.
+A robust, local LLM API gateway that rotates through multiple free-tier API keys (Groq, Gemini, Scaleway, Mistral & OpenRouter) to bypass rate limits. It provides a single OpenAI-compatible endpoint that you can use with tools like **Open WebUI**, **AnythingLLM**, **ONLYOFFICE**, and custom scripts.
 
 ## 🌟 Features
 
-- **Automatic Key Rotation**: Seamlessly switches between 10+ Groq and Gemini keys.
+- **Automatic Key Rotation**: Seamlessly switches between multiple API keys per provider.
+- **Multi-Provider Support**: Groq, Gemini, Scaleway, Mistral, and OpenRouter — all behind one endpoint.
 - **Rate Limit Handling**: Automatically retries 429 (Too Many Requests) errors with the next available key.
 - **Universal Compatibility**: Mimics the OpenAI API standard (`/v1/chat/completions`).
+- **50 Virtual Models**: Access models from 5 providers through a single gateway.
 - **Streaming Support**: Real-time text generation compatible with modern UIs.
-- **Multimodal Support**: Use Gemini models for image analysis (Vision).
+- **Multimodal Support**: Vision models (Pixtral, Scout, Gemini Flash).
 - **Image Generation**: Integrated support for Google's **Imagen 3 / Imagen-4** models.
 - **Persistence**: Runs as a background `systemd` service.
 
@@ -42,19 +44,77 @@ To make the rotator run automatically in the background:
    sudo systemctl start llm-rotator.service
    ```
 
-## 📊 Available Virtual Models
+## 📊 Available Virtual Models (50 models across 5 providers)
 
+### Groq (11 keys rotating)
 | Virtual Model | Underlying Engine | Speed | Capability |
 | :--- | :--- | :--- | :--- |
-| `groq-llama` | Groq Llama 3.3 70B | 280 tps | Lightning-fast Chat & Coding |
-| `groq-llama-small` | Groq Llama 3.1 8B | 560 tps | Ultra-fast lightweight tasks |
+| `groq-llama` | Llama 3.3 70B | 280 tps | Flagship chat & coding |
+| `groq-llama-small` | Llama 3.1 8B | 560 tps | Ultra-fast lightweight tasks |
 | `groq-scout` | Llama 4 Scout 17B | 750 tps | Fast multimodal (vision + text) |
-| `groq-gpt-oss` | OpenAI GPT-OSS 120B | 500 tps | Best reasoning, flagship open model |
-| `groq-gpt-oss-mini` | OpenAI GPT-OSS 20B | 1000 tps | Fastest, good quality |
-| `groq-qwen` | Qwen3 32B | 400 tps | Strong multilingual & reasoning |
+| `groq-gpt-oss` | GPT-OSS 120B | 500 tps | Best reasoning |
+| `groq-gpt-oss-mini` | GPT-OSS 20B | 1000 tps | Fastest, good quality |
+| `groq-qwen` | Qwen3 32B | 400 tps | Multilingual & reasoning |
 | `groq-kimi` | Kimi K2 0905 | 200 tps | 262K context, agentic coding |
-| `gemini-flash` | Gemini 2.0 Flash | — | Vision & Long Context |
-| `gemini-image` | Imagen 3 / Nano Banana | — | Image Generation |
+
+### Gemini (5 keys rotating)
+| Virtual Model | Underlying Engine | Capability |
+| :--- | :--- | :--- |
+| `gemini-flash` | Gemini 2.0 Flash | Vision & Long Context |
+| `gemini-image` | Imagen 3 / Nano Banana | Image Generation |
+
+### Scaleway — `24155614` (3 keys rotating)
+| Virtual Model | Underlying Engine | Capability |
+| :--- | :--- | :--- |
+| `scw-qwen-235b` | Qwen3 235B | Largest open model |
+| `scw-gpt-oss` | GPT-OSS 120B | Reasoning |
+| `scw-llama-70b` | Llama 3.3 70B | Chat & coding |
+| `scw-llama-8b` | Llama 3.1 8B | Fast lightweight |
+| `scw-deepseek-r1` | DeepSeek R1 Distill 70B | Reasoning (CoT) |
+| `scw-devstral` | Devstral 2 123B | Coding agent |
+| `scw-gemma` | Gemma 3 27B | Compact & capable |
+| `scw-holo` | Holo2 30B | Creative writing |
+| `scw-mistral-nemo` | Mistral Nemo 12B | Lightweight Mistral |
+| `scw-mistral-small` | Mistral Small 3.2 24B | Balanced Mistral |
+| `scw-pixtral` | Pixtral 12B | Vision model |
+| `scw-qwen-coder` | Qwen3 Coder 30B | Code generation |
+
+### Mistral — `24155614` (1 key)
+| Virtual Model | Underlying Engine | Capability |
+| :--- | :--- | :--- |
+| `mistral-large` | Mistral Large | Flagship reasoning |
+| `mistral-medium` | Mistral Medium | Balanced quality |
+| `mistral-small` | Mistral Small | Fast & efficient |
+| `mistral-codestral` | Codestral | Code generation |
+| `mistral-devstral` | Devstral | Coding agent |
+| `mistral-devstral-medium` | Devstral Medium | Coding (balanced) |
+| `mistral-devstral-small` | Devstral Small | Coding (fast) |
+| `mistral-magistral-med` | Magistral Medium | Reasoning |
+| `mistral-magistral-sm` | Magistral Small | Reasoning (fast) |
+| `mistral-ministral-3b` | Ministral 3B | Ultra-lightweight |
+| `mistral-ministral-8b` | Ministral 8B | Lightweight |
+| `mistral-ministral-14b` | Ministral 14B | Mid-range |
+| `mistral-pixtral` | Pixtral Large | Vision (large) |
+| `mistral-nemo` | Mistral Nemo | Open-weight |
+| `mistral-tiny` | Mistral Tiny | Fastest Mistral |
+
+### OpenRouter Free — `24155614` (1 key)
+| Virtual Model | Underlying Engine | Capability |
+| :--- | :--- | :--- |
+| `or-llama-70b` | Llama 3.3 70B | Chat & coding |
+| `or-gpt-oss` | GPT-OSS 120B | Reasoning |
+| `or-gpt-oss-mini` | GPT-OSS 20B | Fast reasoning |
+| `or-qwen-coder` | Qwen3 Coder | Code generation |
+| `or-qwen-next` | Qwen3 Next 80B | Latest Qwen |
+| `or-gemma-27b` | Gemma 3 27B | Compact & capable |
+| `or-gemma-12b` | Gemma 3 12B | Lightweight |
+| `or-mistral-small` | Mistral Small 3.1 | Fast Mistral |
+| `or-hermes-405b` | Hermes 3 405B | Largest open model |
+| `or-nemotron-30b` | Nemotron 3 Nano 30B | NVIDIA reasoning |
+| `or-nemotron-9b` | Nemotron Nano 9B | NVIDIA lightweight |
+| `or-step-flash` | Step 3.5 Flash | 256K context |
+| `or-glm` | GLM 4.5 Air | Chinese + English |
+| `or-trinity` | Trinity Large | Arcee hybrid |
 
 ## 🔗 Integration Examples
 

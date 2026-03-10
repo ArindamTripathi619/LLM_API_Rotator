@@ -69,6 +69,246 @@ model_list:
       model: gemini/nano-banana-pro-preview
       api_key: AIzaSy_example_key_1
 
+  # ── Scaleway Models (each rotates across all your Scaleway keys) ──
+
+  # Qwen3 235B — largest open model
+  - model_name: scw-qwen-235b
+    litellm_params:
+      model: openai/qwen3-235b-a22b
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+  - model_name: scw-qwen-235b
+    litellm_params:
+      model: openai/qwen3-235b-a22b
+      api_key: scw_example_key_2
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # GPT-OSS 120B
+  - model_name: scw-gpt-oss
+    litellm_params:
+      model: openai/gpt-oss-120b
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Llama 3.3 70B
+  - model_name: scw-llama-70b
+    litellm_params:
+      model: openai/llama-3.3-70b-instruct
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Llama 3.1 8B
+  - model_name: scw-llama-8b
+    litellm_params:
+      model: openai/llama-3.1-8b-instruct
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # DeepSeek R1 Distill 70B
+  - model_name: scw-deepseek-r1
+    litellm_params:
+      model: openai/deepseek-r1-distill-llama-70b
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Devstral 2 123B — coding agent
+  - model_name: scw-devstral
+    litellm_params:
+      model: openai/devstral-2-123b
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Gemma 3 27B
+  - model_name: scw-gemma
+    litellm_params:
+      model: openai/gemma-3-27b-it
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Holo2 30B — creative writing
+  - model_name: scw-holo
+    litellm_params:
+      model: openai/holo2-30b
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Mistral Nemo 12B
+  - model_name: scw-mistral-nemo
+    litellm_params:
+      model: openai/mistral-nemo-instruct-2407
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Mistral Small 3.2 24B
+  - model_name: scw-mistral-small
+    litellm_params:
+      model: openai/mistral-small-3.2-24b-instruct-2506
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Pixtral 12B — vision
+  - model_name: scw-pixtral
+    litellm_params:
+      model: openai/pixtral-12b-2409
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # Qwen3 Coder 30B
+  - model_name: scw-qwen-coder
+    litellm_params:
+      model: openai/qwen3-coder-30b-a3b
+      api_key: scw_example_key_1
+      api_base: https://api.scaleway.ai/YOUR_PROJECT_ID/v1
+
+  # ── Mistral Models ──
+
+  - model_name: mistral-large
+    litellm_params:
+      model: mistral/mistral-large-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-medium
+    litellm_params:
+      model: mistral/mistral-medium-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-small
+    litellm_params:
+      model: mistral/mistral-small-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-codestral
+    litellm_params:
+      model: mistral/codestral-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-devstral
+    litellm_params:
+      model: mistral/devstral-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-devstral-medium
+    litellm_params:
+      model: mistral/devstral-medium-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-devstral-small
+    litellm_params:
+      model: mistral/devstral-small-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-magistral-med
+    litellm_params:
+      model: mistral/magistral-medium-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-magistral-sm
+    litellm_params:
+      model: mistral/magistral-small-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-ministral-3b
+    litellm_params:
+      model: mistral/ministral-3b-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-ministral-8b
+    litellm_params:
+      model: mistral/ministral-8b-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-ministral-14b
+    litellm_params:
+      model: mistral/mistral-small-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-pixtral
+    litellm_params:
+      model: mistral/pixtral-large-latest
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-nemo
+    litellm_params:
+      model: mistral/open-mistral-nemo
+      api_key: your_mistral_api_key
+
+  - model_name: mistral-tiny
+    litellm_params:
+      model: mistral/mistral-tiny-latest
+      api_key: your_mistral_api_key
+
+  # ── OpenRouter Models (Free Tier) ──
+
+  - model_name: or-llama-70b
+    litellm_params:
+      model: openrouter/meta-llama/llama-3.3-70b-instruct:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-gpt-oss
+    litellm_params:
+      model: openrouter/openai/gpt-oss-120b:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-gpt-oss-mini
+    litellm_params:
+      model: openrouter/openai/gpt-oss-20b:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-qwen-coder
+    litellm_params:
+      model: openrouter/qwen/qwen3-coder:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-qwen-next
+    litellm_params:
+      model: openrouter/qwen/qwen3-next-80b:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-gemma-27b
+    litellm_params:
+      model: openrouter/google/gemma-3-27b-it:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-gemma-12b
+    litellm_params:
+      model: openrouter/google/gemma-3-12b-it:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-mistral-small
+    litellm_params:
+      model: openrouter/mistralai/mistral-small-3.1-24b-instruct:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-hermes-405b
+    litellm_params:
+      model: openrouter/nousresearch/hermes-3-llama-3.1-405b:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-nemotron-30b
+    litellm_params:
+      model: openrouter/nvidia/nemotron-3-nano-30b-instruct:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-nemotron-9b
+    litellm_params:
+      model: openrouter/nvidia/nemotron-nano-8b-v1:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-step-flash
+    litellm_params:
+      model: openrouter/stepfun/step-3.5-flash:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-glm
+    litellm_params:
+      model: openrouter/thudm/glm-4.5-9b-air:free
+      api_key: sk-or-v1-your_openrouter_key
+
+  - model_name: or-trinity
+    litellm_params:
+      model: openrouter/arcee-ai/trinity-large:free
+      api_key: sk-or-v1-your_openrouter_key
+
 litellm_settings:
   drop_params: true
   num_retries: 5
