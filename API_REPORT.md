@@ -13,11 +13,11 @@ The service runs locally and mimics the OpenAI API standard, making it compatibl
 ## 2. Available Models (50 virtual models across 5 providers)
 
 The service rotates through your underlying keys whenever one hits a rate limit. Key rotation per provider:
-- **Groq**: 11 API keys × 7 models = 77 entries
+- **Groq**: 17 API keys × 7 models = 119 entries
 - **Gemini**: 5 API keys × 2 models = 10 entries
-- **Scaleway**: 3 API keys × 12 models = 36 entries
-- **Mistral**: 1 API key × 15 models = 15 entries
-- **OpenRouter**: 1 API key × 14 models = 14 entries
+- **Scaleway**: 21 API keys × 12 models = 252 entries
+- **Mistral**: 2 API keys × 15 models = 30 entries
+- **OpenRouter**: 11 API keys × 14 models = 154 entries
 
 ### Groq
 | Model Name | Underlying Model | Speed | Best Used For |

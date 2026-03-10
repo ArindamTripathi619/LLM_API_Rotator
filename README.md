@@ -46,7 +46,7 @@ To make the rotator run automatically in the background:
 
 ## 📊 Available Virtual Models (50 models across 5 providers)
 
-### Groq (11 keys rotating)
+### Groq (17 keys rotating)
 | Virtual Model | Underlying Engine | Speed | Capability |
 | :--- | :--- | :--- | :--- |
 | `groq-llama` | Llama 3.3 70B | 280 tps | Flagship chat & coding |
@@ -63,7 +63,7 @@ To make the rotator run automatically in the background:
 | `gemini-flash` | Gemini 2.0 Flash | Vision & Long Context |
 | `gemini-image` | Imagen 3 / Nano Banana | Image Generation |
 
-### Scaleway — `24155614` (3 keys rotating)
+### Scaleway (21 keys rotating)
 | Virtual Model | Underlying Engine | Capability |
 | :--- | :--- | :--- |
 | `scw-qwen-235b` | Qwen3 235B | Largest open model |
@@ -79,7 +79,7 @@ To make the rotator run automatically in the background:
 | `scw-pixtral` | Pixtral 12B | Vision model |
 | `scw-qwen-coder` | Qwen3 Coder 30B | Code generation |
 
-### Mistral — `24155614` (1 key)
+### Mistral (2 keys rotating)
 | Virtual Model | Underlying Engine | Capability |
 | :--- | :--- | :--- |
 | `mistral-large` | Mistral Large | Flagship reasoning |
@@ -98,7 +98,7 @@ To make the rotator run automatically in the background:
 | `mistral-nemo` | Mistral Nemo | Open-weight |
 | `mistral-tiny` | Mistral Tiny | Fastest Mistral |
 
-### OpenRouter Free — `24155614` (1 key)
+### OpenRouter Free (11 keys rotating)
 | Virtual Model | Underlying Engine | Capability |
 | :--- | :--- | :--- |
 | `or-llama-70b` | Llama 3.3 70B | Chat & coding |
